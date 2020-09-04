@@ -52,10 +52,10 @@ export default function Header() {
                     </Box>
                     <Box display="flex" alignContent="flex-end" alignItems="center">
                         <PersonOutlineIcon />
-                        Minha Conta
+                        <span>Minha Conta</span>
                     <ShoppingCartIcon />
                         <Box className={classes.boxNumber}>
-                            1
+                            <span>1</span>
                         </Box>
                     </Box>
                 </Box>
