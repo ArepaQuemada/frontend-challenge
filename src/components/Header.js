@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, makeStyles, TextField, InputAdornment } from '@material-ui/core';
+import { Container, Box, makeStyles, TextField, InputAdornment, Grid } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
@@ -8,7 +8,7 @@ import logo from '../assets/img/logo.svg';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: '20px',
+        padding: '20px'
     },
     boxContainer: {
         [theme.breakpoints.down('sm')]: {
@@ -29,11 +29,24 @@ const useStyles = makeStyles(theme => ({
         fontSize: '10px'
     },
     menu: {
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             display: 'none'
         },
     },
-    inputBox: {
+    person: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none'
+        }
+    },
+    cartIcon: {
+        [theme.breakpoints.up('md')]: {
+            order: 2
+        },
+    },
+    input: {
+        [theme.breakpoints.up('md')]: {
+            order: 1
+        },
     }
 }));
 
@@ -42,25 +55,24 @@ export default function Header() {
 
     return (
         <Container className={classes.root}>
-            <Box display="flex" className={classes.boxContainer}>
-                <Box display="flex">
-                    <Box display="flex" alignContent="flex-end">
-                        <MenuIcon fontSize="large" className={classes.menu} />
-                    </Box>
-                    <Box flexGrow={1} display="flex" justifyContent="center">
-                        <img src={logo} alt="logo.svg" />
-                    </Box>
-                    <Box display="flex" alignContent="flex-end" alignItems="center">
-                        <PersonOutlineIcon />
+            <Grid container alignItems="center">
+                <Grid item xs={4} sm={1}>
+                    <MenuIcon fontSize="large" className={classes.menu} />
+                </Grid>
+                <Grid item xs={4} sm={2}>
+                    <img src={logo} alt="logo.svg" />
+                </Grid>
+                <Grid item xs={4} sm={4} className={classes.cartIcon}>
+                    <Box display="flex">
+                        <PersonOutlineIcon className={classes.person} />
                         <span>Minha Conta</span>
-                    <ShoppingCartIcon />
+                        <ShoppingCartIcon />
                         <Box className={classes.boxNumber}>
                             <span>1</span>
                         </Box>
                     </Box>
-                </Box>
-
-                <Box className={classes.inputBox}>
+                </Grid>
+                <Grid item xs={12} md={5} order={-1} className={classes.input}>
                     <TextField
                         fullWidth
                         label="O que está procurando?"
@@ -71,8 +83,8 @@ export default function Header() {
                                 </InputAdornment>
                             ),
                         }} />
-                </Box>
-            </Box>
+                </Grid>
+            </Grid>
         </Container>
     );
 }
