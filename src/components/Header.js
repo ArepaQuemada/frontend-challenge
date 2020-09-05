@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Header() {
+export default function Header({ articles }) {
     const classes = useStyles();
 
     return (
@@ -75,7 +75,7 @@ export default function Header() {
                         </Box>
                         <ShoppingCartIcon />
                         <Box className={classes.boxNumber}>
-                            <span>1</span>
+                            <span>{articles}</span>
                         </Box>
                     </Box>
                 </Grid>
