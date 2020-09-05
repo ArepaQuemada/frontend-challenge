@@ -11,6 +11,11 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             width: '100%'
         },
+    },
+    boxContainer: {
+        [theme.breakpoints.up('md')]: {
+            textAlign: 'center'
+        }
     }
 }));
 
@@ -36,7 +41,7 @@ export default function FormNews() {
     }
     return (
         <Container className={classes.root}>
-            <Box>
+            <Box className={classes.boxContainer}>
                 <Typography variant="h6">
                     Participe de nossas news com promoções e novidades!
                 </Typography>
