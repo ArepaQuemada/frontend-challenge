@@ -4,20 +4,20 @@ import PageCarousel from './components/PageCarousel';
 import TopSell from './components/TopSell';
 import FormNews from './components/FormNews';
 
-export const ArticleContext = React.createContext('');
+export const ItemsCartContext = React.createContext('');
 
 function App() {
 
-  const [ articles, updateArticles ] = useState(0);
+  const [ itemsCart, updateItemsCart ] = useState(0);
 
   return (
     <div className="App">
-      <ArticleContext.Provider value={[ articles, updateArticles ]}>
-        <Header articles={articles} />
+      <ItemsCartContext.Provider value={[ itemsCart, updateItemsCart ]}>
+        <Header itemsCart={itemsCart} />
         <PageCarousel />
         <TopSell />
         <FormNews />
-      </ArticleContext.Provider>
+      </ItemsCartContext.Provider>
     </div>
   );
 }
