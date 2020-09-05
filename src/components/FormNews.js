@@ -16,6 +16,11 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('md')]: {
             textAlign: 'center'
         }
+    },
+    buttonContainer: {
+        [theme.breakpoints.up('md')]: {
+            marginBottom: '20px'
+        }
     }
 }));
 
@@ -66,11 +71,12 @@ export default function FormNews() {
                             onChange={handleChangeEmail} 
                             helperText="Preencha com um e-mail válido"/>
                     </Box>
-                    <Box className={classes.boxItem}>
+                    <Box className={`${classes.boxItem} ${classes.buttonContainer}`}>
                         <Button 
                             variant="contained" 
                             color="primary" 
-                            fullWidth={isFull} 
+                            fullWidth={isFull}
+                            size="large" 
                             disabled={errorName || errorMail}>
                         Eu quero!
                         </Button>
