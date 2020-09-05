@@ -34,6 +34,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     person: {
+        verticalAlign: 'middle',
         [theme.breakpoints.down('md')]: {
             display: 'none'
         }
@@ -47,6 +48,10 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('md')]: {
             order: 1
         },
+    },
+    text: {
+        fontSize: '13px',
+        lineHeight: '18px'
     }
 }));
 
@@ -63,9 +68,11 @@ export default function Header() {
                     <img src={logo} alt="logo.svg" />
                 </Grid>
                 <Grid item xs={4} sm={4} className={classes.cartIcon}>
-                    <Box display="flex">
-                        <PersonOutlineIcon className={classes.person} />
-                        <span>Minha Conta</span>
+                    <Box display="flex" justifyContent="center">
+                        <Box className={classes.person}>
+                            <PersonOutlineIcon />
+                            <span className={classes.text}>Minha Conta</span>
+                        </Box>
                         <ShoppingCartIcon />
                         <Box className={classes.boxNumber}>
                             <span>1</span>
