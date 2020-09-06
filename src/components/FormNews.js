@@ -5,7 +5,6 @@ import validator from 'email-validator';
 const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor: theme.palette.primary.light,
-        padding: '30px',
     },
     boxItem: {
         [theme.breakpoints.down('sm')]: {
@@ -51,7 +50,7 @@ export default function FormNews() {
         setErrorMail(hasError);
     }
     return (
-        <Container className={classes.root}>
+        <Container className={classes.root} disableGutters maxWidth>
             <Box className={classes.boxContainer}>
                 <Typography variant="h6">
                     Participe de nossas news com promoções e novidades!
