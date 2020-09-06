@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
         padding: '20px'
     },
     background: {
-        backgroundColor: '#FFFFFF'
+        backgroundColor: theme.palette.primary.main
     },
     carouselContainer: {
         display: 'flex',

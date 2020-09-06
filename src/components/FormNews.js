@@ -4,7 +4,7 @@ import validator from 'email-validator';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundColor: '#F2F2F2',
+        backgroundColor: theme.palette.primary.light,
         padding: '30px',
     },
     boxItem: {
@@ -21,14 +21,14 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('md')]: {
             marginBottom: '20px'
         }
-    }
+    },
 }));
 
 export default function FormNews() {
     const classes = useStyles();
     const isFull = useMediaQuery('(max-width:960px)');
-    const [ errorName, setErrorName ] = useState(null);
-    const [ errorMail, setErrorMail ] = useState(null);
+    const [errorName, setErrorName] = useState(null);
+    const [errorMail, setErrorMail] = useState(null);
 
     useEffect(() => {
         setErrorName(false)
@@ -52,33 +52,33 @@ export default function FormNews() {
                 </Typography>
                 <Box display="flex" flexWrap="wrap" alignItems="center" justifyContent="center">
                     <Box className={classes.boxItem}>
-                        <TextField 
-                            label="Digite seu nome" 
-                            variant="outlined" 
-                            type="text" 
-                            fullWidth={isFull} 
-                            error={errorName} 
-                            onChange={handleChangeName} 
-                            helperText="Preencha com seu nome completo"/>
+                        <TextField
+                            label="Digite seu nome"
+                            variant="outlined"
+                            type="text"
+                            fullWidth={isFull}
+                            error={errorName}
+                            onChange={handleChangeName}
+                            helperText="Preencha com seu nome completo" />
                     </Box>
                     <Box className={classes.boxItem}>
-                        <TextField 
-                            label="Digite seu email" 
-                            variant="outlined" 
-                            type="email" 
+                        <TextField
+                            label="Digite seu email"
+                            variant="outlined"
+                            type="email"
                             fullWidth={isFull}
-                            error={errorMail} 
-                            onChange={handleChangeEmail} 
-                            helperText="Preencha com um e-mail válido"/>
+                            error={errorMail}
+                            onChange={handleChangeEmail}
+                            helperText="Preencha com um e-mail válido" />
                     </Box>
                     <Box className={`${classes.boxItem} ${classes.buttonContainer}`}>
-                        <Button 
-                            variant="contained" 
-                            color="primary" 
-                            fullWidth={isFull}
-                            size="large" 
-                            disabled={errorName || errorMail}>
-                        Eu quero!
+                        <Button
+                                variant="contained"
+                                color="primary"
+                                fullWidth={isFull}
+                                size="large"
+                                disabled={errorName || errorMail}>
+                                Eu quero!
                         </Button>
                     </Box>
                 </Box>

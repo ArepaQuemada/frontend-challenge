@@ -22,6 +22,7 @@ export default function ItemCard({ item }) {
     const classes = useStyles();
     const [itemsCart, updateItemsCart] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
+    const starsArr = [1, 2, 3, 4, 5];
 
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
@@ -31,14 +32,22 @@ export default function ItemCard({ item }) {
         <Card className={classes.root}>
             <CardMedia
                 className={classes.media}
-                image={imageUrl}
-            />
+                image={imageUrl} />
             <CardContent>
                 <Typography variant="caption">
                     {productName}
                 </Typography>
                 <Box>
-                    {}
+                    {starsArr.map((element, index) => {
+                        if (index < stars) {
+                            return (
+                                <StarIcon color="secondary" fontSize="small"/>
+                            )
+                        }
+                        return (
+                            <StarBorder color="secondary" fontSize="small"/>
+                        ) 
+                    })}
                 </Box>
                 <Typography>
                     por R$ {price}
