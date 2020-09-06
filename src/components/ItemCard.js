@@ -1,20 +1,26 @@
 import React, { useContext } from 'react';
-import { Card, CardMedia, CardActionArea, CardContent, Box, Typography, makeStyles, Button } from '@material-ui/core';
+import { Card, CardMedia, CardContent, Box, Typography, makeStyles, Button } from '@material-ui/core';
 import { ItemsCartContext } from '../App';
+import StarIcon from '@material-ui/icons/Star';
+import StarBorder from '@material-ui/icons/StarBorder';
 
 const useStyles = makeStyles(theme => ({
     root: {
         width: '160px',
+        flexGrow: 1,
+        padding: '20px',
+        borderRadius: '0%',
+        border: 'none',
+        boxShadow: 'none'
     },
     media: {
-        height: '100px'
+        height: '135px',
     }
 }))
 
 export default function ItemCard({ item }) {
     const classes = useStyles();
     const [itemsCart, updateItemsCart] = useContext(ItemsCartContext);
-    console.log(item);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
 
     const handleClick = () => {
@@ -32,7 +38,7 @@ export default function ItemCard({ item }) {
                     {productName}
                 </Typography>
                 <Box>
-                    {stars}
+                    {}
                 </Box>
                 <Typography>
                     por R$ {price}
@@ -42,7 +48,7 @@ export default function ItemCard({ item }) {
                     </Typography>
                 <Button variant="contained" color="primary" onClick={handleClick}>
                     COMPRAR
-                    </Button>
+                </Button>
             </CardContent>
         </Card>
     )
