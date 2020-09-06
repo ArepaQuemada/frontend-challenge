@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     boxContainer: {
+        padding: '16px',
         [theme.breakpoints.up('md')]: {
             textAlign: 'center'
         }
