@@ -21,12 +21,18 @@ const useStyles = makeStyles(theme => ({
     price: {
         fontWeight: "bolder",
         fontSize: '18px'
+    },
+    button: {
+        '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            opacity: '0.8',
+        },
     }
 }))
 
 export default function ItemCard({ item }) {
     const classes = useStyles();
-    const [itemsCart, updateItemsCart] = useContext(ItemsCartContext);
+    const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
     const starsArr = [1, 2, 3, 4, 5];
 
@@ -61,8 +67,12 @@ export default function ItemCard({ item }) {
                 <Typography>
                     ou em {quantity}x de R$ 28,87
                     </Typography>
-                <Button variant="contained" color="primary" onClick={handleClick}>
-                    COMPRAR
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={handleClick} 
+                    className={classes.button}>
+                        COMPRAR
                 </Button>
             </CardContent>
         </Card>

@@ -22,6 +22,12 @@ const useStyles = makeStyles(theme => ({
             marginBottom: '20px'
         }
     },
+    button: {
+        '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            opacity: '0.7'
+        }
+    }
 }));
 
 export default function FormNews() {
@@ -73,6 +79,7 @@ export default function FormNews() {
                     </Box>
                     <Box className={`${classes.boxItem} ${classes.buttonContainer}`}>
                         <Button
+                                className={classes.button}
                                 variant="contained"
                                 color="primary"
                                 fullWidth={isFull}
