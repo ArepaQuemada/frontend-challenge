@@ -15,3 +15,16 @@ code {
 .awssld__wrapper {
   max-height: 430px;
 }
+
+.awssld__bullets {
+  margin-bottom: 55px;
+  z-index: 3;
+}
+
+.awssld__bullets button {
+  background-color: #F8475F !important;
+}
+
+.dot {
+  background-color: #F8475F !important;
+}
