@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/frontend-challenge/static/css/main.797d8cea.chunk.css",
-    "main.js": "/frontend-challenge/static/js/main.acd6dc98.chunk.js",
-    "main.js.map": "/frontend-challenge/static/js/main.acd6dc98.chunk.js.map",
+    "main.js": "/frontend-challenge/static/js/main.81aaf6c8.chunk.js",
+    "main.js.map": "/frontend-challenge/static/js/main.81aaf6c8.chunk.js.map",
     "runtime-main.js": "/frontend-challenge/static/js/runtime-main.516e6923.js",
     "runtime-main.js.map": "/frontend-challenge/static/js/runtime-main.516e6923.js.map",
     "static/css/2.6938f16a.chunk.css": "/frontend-challenge/static/css/2.6938f16a.chunk.css",
-    "static/js/2.3f86c820.chunk.js": "/frontend-challenge/static/js/2.3f86c820.chunk.js",
-    "static/js/2.3f86c820.chunk.js.map": "/frontend-challenge/static/js/2.3f86c820.chunk.js.map",
+    "static/js/2.a58fe258.chunk.js": "/frontend-challenge/static/js/2.a58fe258.chunk.js",
+    "static/js/2.a58fe258.chunk.js.map": "/frontend-challenge/static/js/2.a58fe258.chunk.js.map",
     "index.html": "/frontend-challenge/index.html",
-    "precache-manifest.f22b8d6b80220560cc614c0b5c4eafee.js": "/frontend-challenge/precache-manifest.f22b8d6b80220560cc614c0b5c4eafee.js",
+    "precache-manifest.8ade2b46e66c3ced70fa2b3565e0281b.js": "/frontend-challenge/precache-manifest.8ade2b46e66c3ced70fa2b3565e0281b.js",
     "service-worker.js": "/frontend-challenge/service-worker.js",
     "static/css/2.6938f16a.chunk.css.map": "/frontend-challenge/static/css/2.6938f16a.chunk.css.map",
     "static/css/main.797d8cea.chunk.css.map": "/frontend-challenge/static/css/main.797d8cea.chunk.css.map",
-    "static/js/2.3f86c820.chunk.js.LICENSE.txt": "/frontend-challenge/static/js/2.3f86c820.chunk.js.LICENSE.txt",
+    "static/js/2.a58fe258.chunk.js.LICENSE.txt": "/frontend-challenge/static/js/2.a58fe258.chunk.js.LICENSE.txt",
     "static/media/desktop-banner.jpg": "/frontend-challenge/static/media/desktop-banner.cfc6af47.jpg",
     "static/media/logo.svg": "/frontend-challenge/static/media/logo.db8102f4.svg",
     "static/media/mobile-banner.jpg": "/frontend-challenge/static/media/mobile-banner.303001bb.jpg"
@@ -21,8 +21,8 @@
   "entrypoints": [
     "static/js/runtime-main.516e6923.js",
     "static/css/2.6938f16a.chunk.css",
-    "static/js/2.3f86c820.chunk.js",
+    "static/js/2.a58fe258.chunk.js",
     "static/css/main.797d8cea.chunk.css",
-    "static/js/main.acd6dc98.chunk.js"
+    "static/js/main.81aaf6c8.chunk.js"
   ]
 }
