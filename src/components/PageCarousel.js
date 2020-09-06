@@ -8,7 +8,7 @@ import { makeStyles, useMediaQuery, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
         zIndex: 5,
-        color: '#FFFFFF',
+        color: theme.palette.primary.light,
         padding: '20px',
     },
     image: {

@@ -8,20 +8,33 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '160px',
         flexGrow: 1,
-        padding: '20px',
         borderRadius: '0%',
         border: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
+        [theme.breakpoints.up('md')]: {
+            padding: '20px'
+        }
     },
     media: {
         height: '135px',
+    },
+    price: {
+        fontWeight: "bolder",
+        fontSize: '18px'
+    },
+    button: {
+        '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            opacity: '0.8',
+        },
     }
 }))
 
 export default function ItemCard({ item }) {
     const classes = useStyles();
-    const [itemsCart, updateItemsCart] = useContext(ItemsCartContext);
+    const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
+    const starsArr = [1, 2, 3, 4, 5];
 
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
@@ -31,23 +44,35 @@ export default function ItemCard({ item }) {
         <Card className={classes.root}>
             <CardMedia
                 className={classes.media}
-                image={imageUrl}
-            />
+                image={imageUrl} />
             <CardContent>
                 <Typography variant="caption">
                     {productName}
                 </Typography>
                 <Box>
-                    {}
+                    {starsArr.map((element, index) => {
+                        if (index < stars) {
+                            return (
+                                <StarIcon color="secondary" fontSize="small"/>
+                            )
+                        }
+                        return (
+                            <StarBorder color="secondary" fontSize="small"/>
+                        ) 
+                    })}
                 </Box>
-                <Typography>
+                <Typography className={classes.price}>
                     por R$ {price}
                 </Typography>
                 <Typography>
                     ou em {quantity}x de R$ 28,87
                     </Typography>
-                <Button variant="contained" color="primary" onClick={handleClick}>
-                    COMPRAR
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={handleClick} 
+                    className={classes.button}>
+                        COMPRAR
                 </Button>
             </CardContent>
         </Card>

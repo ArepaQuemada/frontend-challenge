@@ -8,10 +8,14 @@ import { Carousel } from '@techychan/react-responsive-carousel';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        padding: '20px'
+        padding: '20px',
+        [theme.breakpoints.down("md")]: {
+            paddingTop: '10px',
+            paddingLeft: '10px'
+        }
     },
     background: {
-        backgroundColor: '#FFFFFF'
+        backgroundColor: theme.palette.primary.main
     },
     carouselContainer: {
         display: 'flex',
@@ -23,7 +27,7 @@ export default function TopSell() {
     const URL = 'https://corebiz-test.herokuapp.com/api/v1/products';
     const response = useFetch(URL);
     const { data = [] } = response || {};
-    const isMobile = useMediaQuery('(max-width:960px)');
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const parseData = (data, split) => {
         let interval = 0;

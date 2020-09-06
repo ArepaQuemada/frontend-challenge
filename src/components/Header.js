@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
         width: '17px',
         height: '17px',
         textAlign: 'center',
-        backgroundColor: '#F8475F',
-        color: '#FFFFFF',
+        backgroundColor: theme.palette.secondary.main,
+        color: theme.palette.primary.light,
         fontSize: '10px'
     },
     menu: {
