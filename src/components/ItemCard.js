@@ -17,6 +17,10 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         height: '135px',
+    },
+    price: {
+        fontWeight: "bolder",
+        fontSize: '18px'
     }
 }))
 
@@ -51,7 +55,7 @@ export default function ItemCard({ item }) {
                         ) 
                     })}
                 </Box>
-                <Typography>
+                <Typography className={classes.price}>
                     por R$ {price}
                 </Typography>
                 <Typography>
