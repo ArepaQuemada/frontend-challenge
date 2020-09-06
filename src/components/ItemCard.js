@@ -8,10 +8,12 @@ const useStyles = makeStyles(theme => ({
     root: {
         width: '160px',
         flexGrow: 1,
-        padding: '20px',
         borderRadius: '0%',
         border: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
+        [theme.breakpoints.up('md')]: {
+            padding: '20px'
+        }
     },
     media: {
         height: '135px',
