@@ -6,7 +6,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        width: '160px',
+        width: '200px',
         flexGrow: 1,
         borderRadius: '0%',
         border: 'none',
@@ -27,10 +27,14 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: theme.palette.primary.main,
             opacity: '0.8',
         },
+    },
+    listPrice: {
+        textDecoration: 'line-through'
     }
 }))
 
 export default function ItemCard({ item }) {
+    console.log(item);
     const classes = useStyles();
     const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
@@ -61,12 +65,17 @@ export default function ItemCard({ item }) {
                         ) 
                     })}
                 </Box>
+                <Typography className={classes.listPrice}>
+                    {listPrice ? listPrice : ''}
+                </Typography>
                 <Typography className={classes.price}>
                     por R$ {price}
                 </Typography>
+                {quantity || value ?  
                 <Typography>
-                    ou em {quantity}x de R$ 28,87
-                    </Typography>
+                    ou em {quantity}x de R$ {value}
+                </Typography> : <Box></Box>}
+
                 <Button 
                     variant="contained" 
                     color="primary" 
