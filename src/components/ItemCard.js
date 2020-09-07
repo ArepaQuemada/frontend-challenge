@@ -36,15 +36,18 @@ const useStyles = makeStyles(theme => ({
     },
     quantity: {
         fontSize: '11px'
+    },
+    productName: {
+        fontSize: '12px'
     }
-}))
+}));
 
 export default function ItemCard({ item }) {
     console.log(item);
     const classes = useStyles();
     const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productName, stars } = item
-    const starsArr = [1, 2, 3, 4, 5];
+    const starsArr = [ 1, 2, 3, 4, 5 ];
 
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
@@ -56,7 +59,7 @@ export default function ItemCard({ item }) {
                 className={classes.media}
                 image={imageUrl} />
             <CardContent>
-                <Typography variant="caption">
+                <Typography className={classes.productName}>
                     {productName}
                 </Typography>
                 <Box>
@@ -72,7 +75,7 @@ export default function ItemCard({ item }) {
                     })}
                 </Box>
                 <Typography className={classes.listPrice}>
-                    {listPrice ? listPrice : <div className={classes.space}></div>}
+                    {listPrice ? `de R$ ${listPrice}` : <div className={classes.space}></div>}
                 </Typography>
                 <Typography className={classes.price}>
                     por R$ {price}
@@ -91,5 +94,5 @@ export default function ItemCard({ item }) {
                 </Button>
             </CardContent>
         </Card>
-    )
+    );
 }

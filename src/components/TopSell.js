@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function TopSell() {
     const classes = useStyles();
-    const [loading, setLoading] = useState(false);
+    const [ loading, setLoading ] = useState(false);
     const URL = 'https://corebiz-test.herokuapp.com/api/v1/products';
     const response = useFetch(URL, setLoading);
     const { data = [] } = response || {};
