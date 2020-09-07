@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "071687b03d864f4743c77a40f22c324e",
+    "revision": "0df9c5182e2fe72bc23027c09e0ec92f",
     "url": "/frontend-challenge/index.html"
   },
   {
-    "revision": "025fa73c4758fb365f96",
+    "revision": "3927727fef1490c840b6",
     "url": "/frontend-challenge/static/css/2.6938f16a.chunk.css"
   },
   {
-    "revision": "a721b5f881b96ccbfef0",
+    "revision": "086a2745e5597f96699c",
     "url": "/frontend-challenge/static/css/main.5548ebfd.chunk.css"
   },
   {
-    "revision": "025fa73c4758fb365f96",
-    "url": "/frontend-challenge/static/js/2.8c7c1f35.chunk.js"
+    "revision": "3927727fef1490c840b6",
+    "url": "/frontend-challenge/static/js/2.828c9722.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/frontend-challenge/static/js/2.8c7c1f35.chunk.js.LICENSE.txt"
+    "url": "/frontend-challenge/static/js/2.828c9722.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a721b5f881b96ccbfef0",
-    "url": "/frontend-challenge/static/js/main.a1f88cf0.chunk.js"
+    "revision": "086a2745e5597f96699c",
+    "url": "/frontend-challenge/static/js/main.892b275e.chunk.js"
   },
   {
     "revision": "a6301b192720c2fe64bd",
