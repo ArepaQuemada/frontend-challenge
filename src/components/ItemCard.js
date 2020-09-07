@@ -37,10 +37,13 @@ const useStyles = makeStyles(theme => ({
         fontSize: '11px'
     },
     productName: {
-        fontSize: '12px'
+        fontSize: '12px',
     },
     hideElement: {
         visibility: 'hidden'
+    },
+    content: {
+        padding: 0
     }
 }));
 
@@ -71,7 +74,7 @@ export default function ItemCard({ item }) {
             <CardMedia
                 className={classes.media}
                 image={imageUrl} />
-            <CardContent>
+            <CardContent className={classes.content}>
                 <Typography className={classes.productName}>
                     {productName}
                 </Typography>
