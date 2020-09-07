@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, makeStyles, TextField, InputAdornment, Grid } from '@material-ui/core';
+import { Container, Box, makeStyles, TextField, InputAdornment, Grid, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
@@ -20,9 +20,9 @@ const useStyles = makeStyles(theme => ({
         },
     },
     boxNumber: {
+        width: '19px',
+        height: '19px',
         borderRadius: '50%',
-        width: '17px',
-        height: '17px',
         textAlign: 'center',
         backgroundColor: theme.palette.secondary.main,
         color: theme.palette.primary.light,
@@ -56,7 +56,6 @@ const useStyles = makeStyles(theme => ({
     },
     text: {
         fontSize: '13px',
-        lineHeight: '18px',
     }
 }));
 
@@ -77,12 +76,14 @@ export default function Header({ itemsCart }) {
                         <Box className={classes.person}>
                             <PersonOutlineIcon />
                         </Box>
-                        <Box className={classes.textAccount}>
-                            <span className={classes.text}>Minha Conta</span>
+                        <Box className={classes.textAccount} display="flex" alignItems="center">
+                            <Typography className={classes.text}>Minha Conta</Typography>
                         </Box>
-                        <ShoppingCartIcon />
-                        <Box className={classes.boxNumber}>
-                            <span>{itemsCart}</span>
+                        <Box ml={3}>
+                            <ShoppingCartIcon />
+                        </Box>
+                        <Box className={classes.boxNumber} display="flex" alignItems="center" justifyContent="center">
+                            <Typography>{itemsCart}</Typography>
                         </Box>
                     </Box>
                 </Grid>
