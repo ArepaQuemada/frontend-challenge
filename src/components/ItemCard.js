@@ -7,7 +7,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '200px',
-        height: '400px',
+        height: '390px',
         flexGrow: 1,
         borderRadius: '0%',
         border: 'none',
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     quantity: {
         fontSize: '11px'
     },
-    productName: {
+    productName: {  
         fontSize: '12px',
     },
     hideElement: {
