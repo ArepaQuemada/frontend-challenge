@@ -1,8 +1,13 @@
+## DEMO
 Live demo here https://arepaquemada.github.io/frontend-challenge/
 
-## Available Scripts
+## To run locally
 
-In the project directory, you can run:
+First clone the prject, then type the following in your terminal:
+
+### `npm i`
+
+Install the neccesary dependencies for the project
 
 ### `npm start`
 
