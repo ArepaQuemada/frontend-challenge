@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     },
     text: {
         fontSize: '13px',
-        lineHeight: '18px'
+        lineHeight: '18px',
     }
 }));
 
@@ -71,6 +71,8 @@ export default function Header({ itemsCart }) {
                     <Box display="flex" justifyContent="center">
                         <Box className={classes.person}>
                             <PersonOutlineIcon />
+                        </Box>
+                        <Box>
                             <span className={classes.text}>Minha Conta</span>
                         </Box>
                         <ShoppingCartIcon />
