@@ -7,6 +7,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '200px',
+        height: '400px',
         flexGrow: 1,
         borderRadius: '0%',
         border: 'none',
@@ -32,9 +33,6 @@ const useStyles = makeStyles(theme => ({
         fontSize: '12px',
         textDecoration: 'line-through'
     },
-    space: {
-
-    },
     quantity: {
         fontSize: '11px'
     },
@@ -54,10 +52,6 @@ export default function ItemCard({ item }) {
 
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
-    }
-
-    const insertComma = (num, index) => {
-        return `${num.substring(0, index)},${num.substring(index)}`
     }
 
     const parseCurrency = (number) => {
@@ -96,7 +90,7 @@ export default function ItemCard({ item }) {
                 <Typography className={`${classes.listPrice} ${parsedListPrice ? '' : classes.hideElement}`}>
                     {listPrice ? `de R$ ${parsedListPrice}` : `No list price`}
                 </Typography>
-                <Typography className={classes.price}>
+                <Typography>
                     por {parsedPrice}
                 </Typography>
                 <Typography className={`${classes.quantity} ${parsedValue ? '' : classes.hideElement}`}>
