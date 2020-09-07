@@ -39,6 +39,11 @@ const useStyles = makeStyles(theme => ({
             display: 'none'
         }
     },
+    textAccount: {
+        [theme.breakpoints.down('md')]: {
+            display: 'none'
+        }
+    },
     cartIcon: {
         [theme.breakpoints.up('md')]: {
             order: 2
@@ -72,7 +77,7 @@ export default function Header({ itemsCart }) {
                         <Box className={classes.person}>
                             <PersonOutlineIcon />
                         </Box>
-                        <Box>
+                        <Box className={classes.textAccount}>
                             <span className={classes.text}>Minha Conta</span>
                         </Box>
                         <ShoppingCartIcon />
