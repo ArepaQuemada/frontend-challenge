@@ -60,9 +60,17 @@ export default function ItemCard({ item }) {
         return `${num.substring(0, index)},${num.substring(index)}`
     }
 
-    const parsedListPrice = listPrice ? insertComma(listPrice.toString(), 3) : null;
-    const parsedValue = value ? insertComma(value.toString(), 3) : null;
-    const parsedPrice = price ? insertComma(price.toString(), 3) : null;
+    const parseCurrency = (number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 0
+        }).format(number);
+    }
+
+    const parsedListPrice = listPrice ? parseCurrency(listPrice) : null
+    const parsedValue =  value ? parseCurrency(value) : null;
+    const parsedPrice = price ? parseCurrency(price) : null;
 
     return (
         <Card className={classes.root}>
@@ -89,10 +97,10 @@ export default function ItemCard({ item }) {
                     {listPrice ? `de R$ ${parsedListPrice}` : `No list price`}
                 </Typography>
                 <Typography className={classes.price}>
-                    por R$ {parsedPrice}
+                    por {parsedPrice}
                 </Typography>
                 <Typography className={`${classes.quantity} ${parsedValue ? '' : classes.hideElement}`}>
-                    {parsedValue ? `ou em ${quantity}x de R$ ${parsedValue}` : 'No value'}
+                    {parsedValue ? `ou em ${quantity}x de ${parsedValue}` : 'No value'}
                 </Typography>
 
                 <Button 
