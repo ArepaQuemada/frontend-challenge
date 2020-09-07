@@ -57,7 +57,7 @@ export default function FormNews() {
                     Participe de nossas news com promoções e novidades!
                 </Typography>
                 <Box display="flex" flexWrap="wrap" alignItems="center" justifyContent="center">
-                    <Box className={classes.boxItem}>
+                    <Box className={classes.boxItem} m={1}>
                         <TextField
                             label="Digite seu nome"
                             variant="outlined"
@@ -67,7 +67,7 @@ export default function FormNews() {
                             onChange={handleChangeName}
                             helperText="Preencha com seu nome completo" />
                     </Box>
-                    <Box className={classes.boxItem}>
+                    <Box className={classes.boxItem} m={1}>
                         <TextField
                             label="Digite seu email"
                             variant="outlined"
@@ -77,7 +77,7 @@ export default function FormNews() {
                             onChange={handleChangeEmail}
                             helperText="Preencha com um e-mail válido" />
                     </Box>
-                    <Box className={`${classes.boxItem} ${classes.buttonContainer}`}>
+                    <Box className={`${classes.boxItem} ${classes.buttonContainer}`} ml={1}>
                         <Button
                                 className={classes.button}
                                 variant="contained"
