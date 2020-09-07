@@ -14,6 +14,12 @@ const theme = createMuiTheme({
       main: '#F8475F'
     },
   },
+  typography: {
+    fontFamily: [
+      'Nunito',
+      'sans-serif'
+    ].join(','),
+  },
 });
 
 ReactDOM.render(

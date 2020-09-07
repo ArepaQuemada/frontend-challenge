@@ -5,7 +5,7 @@ import mobileBanner from '../assets/img/mobile-banner.jpg';
 import desktopBanner from '../assets/img/desktop-banner.jpg';
 import { makeStyles, useMediaQuery, Typography } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
     root: {
         zIndex: 5,
         color: theme.palette.primary.light,
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     image: {
         opacity: '0.55'
     }
-}))
+}));
 
 export default function PageCarousel() {
     const classes = useStyles();
@@ -42,5 +42,5 @@ export default function PageCarousel() {
         <>
             {slider}
         </>
-    )
+    );
 }

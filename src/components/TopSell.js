@@ -8,6 +8,9 @@ import { Carousel } from '@techychan/react-responsive-carousel';
 
 const useStyles = makeStyles(theme => ({
     root: {
+        padding: '0px'
+    },
+    title: {
         padding: '20px'
     },
     background: {
@@ -24,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function TopSell() {
     const classes = useStyles();
-    const [loading, setLoading] = useState(false);
+    const [ loading, setLoading ] = useState(false);
     const URL = 'https://corebiz-test.herokuapp.com/api/v1/products';
     const response = useFetch(URL, setLoading);
     const { data = [] } = response || {};
@@ -58,7 +61,7 @@ export default function TopSell() {
 
     return (
         <Container className={classes.root} maxWidth="md">
-            <Typography variant="h5">
+            <Typography variant="h5" className={classes.title}>
                 Mais Vendidos
             </Typography>
             <Carousel showStatus={false}>

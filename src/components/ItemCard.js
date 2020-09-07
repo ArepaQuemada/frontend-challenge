@@ -6,7 +6,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        width: '160px',
+        width: '200px',
         flexGrow: 1,
         borderRadius: '0%',
         border: 'none',
@@ -27,18 +27,50 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: theme.palette.primary.main,
             opacity: '0.8',
         },
+    },
+    listPrice: {
+        fontSize: '12px',
+        textDecoration: 'line-through'
+    },
+    space: {
+
+    },
+    quantity: {
+        fontSize: '11px'
+    },
+    productName: {
+        fontSize: '12px'
+    },
+    hideElement: {
+        visibility: 'hidden'
     }
-}))
+}));
 
 export default function ItemCard({ item }) {
     const classes = useStyles();
     const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
-    const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
-    const starsArr = [1, 2, 3, 4, 5];
+    const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productName, stars } = item
+    const starsArr = [ 1, 2, 3, 4, 5 ];
 
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
     }
+
+    const insertComma = (num, index) => {
+        return `${num.substring(0, index)},${num.substring(index)}`
+    }
+
+    const parseCurrency = (number) => {
+        return new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+            minimumFractionDigits: 0
+        }).format(number);
+    }
+
+    const parsedListPrice = listPrice ? parseCurrency(listPrice) : null
+    const parsedValue =  value ? parseCurrency(value) : null;
+    const parsedPrice = price ? parseCurrency(price) : null;
 
     return (
         <Card className={classes.root}>
@@ -46,7 +78,7 @@ export default function ItemCard({ item }) {
                 className={classes.media}
                 image={imageUrl} />
             <CardContent>
-                <Typography variant="caption">
+                <Typography className={classes.productName}>
                     {productName}
                 </Typography>
                 <Box>
@@ -61,12 +93,16 @@ export default function ItemCard({ item }) {
                         ) 
                     })}
                 </Box>
-                <Typography className={classes.price}>
-                    por R$ {price}
+                <Typography className={`${classes.listPrice} ${parsedListPrice ? '' : classes.hideElement}`}>
+                    {listPrice ? `de R$ ${parsedListPrice}` : `No list price`}
                 </Typography>
-                <Typography>
-                    ou em {quantity}x de R$ 28,87
-                    </Typography>
+                <Typography className={classes.price}>
+                    por {parsedPrice}
+                </Typography>
+                <Typography className={`${classes.quantity} ${parsedValue ? '' : classes.hideElement}`}>
+                    {parsedValue ? `ou em ${quantity}x de ${parsedValue}` : 'No value'}
+                </Typography>
+
                 <Button 
                     variant="contained" 
                     color="primary" 
@@ -76,5 +112,5 @@ export default function ItemCard({ item }) {
                 </Button>
             </CardContent>
         </Card>
-    )
+    );
 }
