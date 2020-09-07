@@ -56,17 +56,14 @@ export default function ItemCard({ item }) {
         updateItemsCart(itemsCart + 1);
     }
 
-    const parseCurrency = (number) => {
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-            minimumFractionDigits: 0
-        }).format(number);
+    const parseNumber = (number) => {
+        const string = number.toString();
+        return 'R$ '+ string.substring(0, string.length - 2).concat(`,${string.substring(string.length - 2)}`);
     }
 
-    const parsedListPrice = listPrice ? parseCurrency(listPrice) : null
-    const parsedValue =  value ? parseCurrency(value) : null;
-    const parsedPrice = price ? parseCurrency(price) : null;
+    const parsedListPrice = listPrice ? parseNumber(listPrice) : null
+    const parsedValue =  value ? parseNumber(value) : null;
+    const parsedPrice = price ? parseNumber(price) : null;
 
     return (
         <Card className={classes.root}>
@@ -90,7 +87,7 @@ export default function ItemCard({ item }) {
                     })}
                 </Box>
                 <Typography className={`${classes.listPrice} ${parsedListPrice ? '' : classes.hideElement}`}>
-                    {listPrice ? `de R$ ${parsedListPrice}` : `No list price`}
+                    {listPrice ? `de ${parsedListPrice}` : `No list price`}
                 </Typography>
                 <Typography>
                     por {parsedPrice}
