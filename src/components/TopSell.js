@@ -8,6 +8,9 @@ import { Carousel } from '@techychan/react-responsive-carousel';
 
 const useStyles = makeStyles(theme => ({
     root: {
+        padding: '0px'
+    },
+    title: {
         padding: '20px'
     },
     background: {
@@ -58,7 +61,7 @@ export default function TopSell() {
 
     return (
         <Container className={classes.root} maxWidth="md">
-            <Typography variant="h5">
+            <Typography variant="h5" className={classes.title}>
                 Mais Vendidos
             </Typography>
             <Carousel showStatus={false}>

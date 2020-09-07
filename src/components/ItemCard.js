@@ -30,6 +30,12 @@ const useStyles = makeStyles(theme => ({
     },
     listPrice: {
         textDecoration: 'line-through'
+    },
+    space: {
+        marginTop: '24px'
+    },
+    quantity: {
+        fontSize: '11px'
     }
 }))
 
@@ -37,7 +43,7 @@ export default function ItemCard({ item }) {
     console.log(item);
     const classes = useStyles();
     const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
-    const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productId, productName, stars } = item
+    const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productName, stars } = item
     const starsArr = [1, 2, 3, 4, 5];
 
     const handleClick = () => {
@@ -66,15 +72,15 @@ export default function ItemCard({ item }) {
                     })}
                 </Box>
                 <Typography className={classes.listPrice}>
-                    {listPrice ? listPrice : ''}
+                    {listPrice ? listPrice : <div className={classes.space}></div>}
                 </Typography>
                 <Typography className={classes.price}>
                     por R$ {price}
                 </Typography>
                 {quantity || value ?  
-                <Typography>
+                <Typography className={classes.quantity}>
                     ou em {quantity}x de R$ {value}
-                </Typography> : <Box></Box>}
+                </Typography> : <div></div>}
 
                 <Button 
                     variant="contained" 
