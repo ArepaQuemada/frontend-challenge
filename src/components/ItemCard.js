@@ -29,21 +29,24 @@ const useStyles = makeStyles(theme => ({
         },
     },
     listPrice: {
+        fontSize: '12px',
         textDecoration: 'line-through'
     },
     space: {
-        marginTop: '24px'
+
     },
     quantity: {
         fontSize: '11px'
     },
     productName: {
         fontSize: '12px'
+    },
+    hideElement: {
+        visibility: 'hidden'
     }
 }));
 
 export default function ItemCard({ item }) {
-    console.log(item);
     const classes = useStyles();
     const [ itemsCart, updateItemsCart ] = useContext(ItemsCartContext);
     const { imageUrl, installments: [{ quantity, value } = {}], listPrice, price, productName, stars } = item
@@ -52,6 +55,14 @@ export default function ItemCard({ item }) {
     const handleClick = () => {
         updateItemsCart(itemsCart + 1);
     }
+
+    const insertComma = (num, index) => {
+        return `${num.substring(0, index)},${num.substring(index)}`
+    }
+
+    const parsedListPrice = listPrice ? insertComma(listPrice.toString(), 3) : null;
+    const parsedValue = value ? insertComma(value.toString(), 3) : null;
+    const parsedPrice = price ? insertComma(price.toString(), 3) : null;
 
     return (
         <Card className={classes.root}>
@@ -74,16 +85,15 @@ export default function ItemCard({ item }) {
                         ) 
                     })}
                 </Box>
-                <Typography className={classes.listPrice}>
-                    {listPrice ? `de R$ ${listPrice}` : <div className={classes.space}></div>}
+                <Typography className={`${classes.listPrice} ${parsedListPrice ? '' : classes.hideElement}`}>
+                    {listPrice ? `de R$ ${parsedListPrice}` : `No list price`}
                 </Typography>
                 <Typography className={classes.price}>
-                    por R$ {price}
+                    por R$ {parsedPrice}
                 </Typography>
-                {quantity || value ?  
-                <Typography className={classes.quantity}>
-                    ou em {quantity}x de R$ {value}
-                </Typography> : <div></div>}
+                <Typography className={`${classes.quantity} ${parsedValue ? '' : classes.hideElement}`}>
+                    {parsedValue ? `ou em ${quantity}x de R$ ${parsedValue}` : 'No value'}
+                </Typography>
 
                 <Button 
                     variant="contained" 
