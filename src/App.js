@@ -3,6 +3,7 @@ import Header from './components/Header';
 import PageCarousel from './components/PageCarousel';
 import TopSell from './components/TopSell';
 import FormNews from './components/FormNews';
+import Footer from './components/Footer';
 
 export const ItemsCartContext = React.createContext('');
 
@@ -17,6 +18,7 @@ function App() {
         <PageCarousel />
         <TopSell />
         <FormNews />
+        <Footer />
       </ItemsCartContext.Provider>
     </div>
   );
